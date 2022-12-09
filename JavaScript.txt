@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 255, 234, 0.609) 30px, rgba(21, 0, 255, 0.661));
+            background-attachment: fixed;
+        }
+
+        div {
+            background-color: aliceblue;
+            border-radius: 25px;
+            margin: auto;
+            margin-top: 100px;
+            width: 250px;
+            height: 230px;
+            text-align: center;
+            line-height: 210px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.677);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="area" onmouseenter="entrar()" onmouseleave="sair()" onclick="clicar()" onmousemove="mover()">
+        <h1>JavaScript </h1>
+    </div>
+
+    <script>
+        // Alterando elementos dentro da div
+        function entrar() {
+
+            var entrar = window.document.getElementById('area')
+            entrar.innerHTML = 'Entrou'
+            entrar.style.backgroundColor = 'yellow'
+        }
+
+        function sair() {
+
+            var sair = window.document.getElementById('area')
+            sair.innerHTML = 'Interaja...'
+            sair.style.backgroundColor = 'green'
+        }
+
+        function clicar() {
+
+            var clicar = window.document.getElementById('area')
+            clicar.innerHTML = 'Clicou'
+            clicar.style.backgroundColor = 'blue'
+        }
+
+        function mover() {
+
+            var mover = window.document.getElementById('area')
+            mover.innerHTML = 'Movendo...'
+            mover.style.backgroundColor = 'red'
+        }
+
+        //Solicitando informações ao usuário
+        let nome = window.prompt(`Digite o seu nome:`)
+        window.alert(`Olá ${nome}, Seja bem vindo!`)
+
+        let idade = window.prompt(`Quantos anos você tem?`)
+
+        if (idade < 18) {
+            window.alert(`Você é menor de idade.`)
+        } else {
+            window.alert(`Você é maior de idade.`)
+        }
+
+        let n1 = Number(window.prompt(`Digite um número:`))
+        let n2 = Number(window.prompt(`Digite outro número:`))
+
+        let operacao = window.prompt(`Digite a operação que deseja realizar:
+       (1) Soma
+       (2) Subtração
+       (3) Divisão
+       (4) Multiplicação`)
+
+        switch (operacao) {
+            case "1":
+                let soma = n1 + n2
+                window.alert(`A soma entre os dois valores é: ${soma}`)
+                break;
+
+            case "2":
+                let subtracao = n1 - n2
+                window.alert(`A subtração entre os dois valores é: ${subtracao}`)
+                break;
+
+            case "3":
+                let divisao = n1 / n2
+                window.alert(`A divisão entre os dois valores é: ${divisao}`)
+                break;
+
+            case "4":
+                let multiplicacao = n1 * n2
+                window.alert(`A multiplicação entre os dois valores é: ${multiplicacao}`)
+                break;
+
+            default:
+                window.alert(`Opção inválida.`)
+                break;
+        }
+    </script>
+
+</body>
+
+</html>
